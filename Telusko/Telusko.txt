@@ -1,0 +1,241 @@
+1. What is Blockchain? | Technology behind Bitcoin
+Satoshi Nakamoto
+BitCoin is Digital Currency
+It works on Peer to Peer Network(Distributed Systems)
+Problem is Security and Trust
+	Security -> Asymmetric Cryptography
+	Trust? Who is maintaining the system? LEDGER
+Node -> Each Machine in the group of network is called a Node
+We can Have Ledger at each of these node. But how to trust? 
+For example, a csv or txt file as a Ledger, how to trust that no one will change this file?
+So we want a Ledger on every machine but no one should be able to change the history.--> BLOCKCHAIN to the rescue.
+
+Blockchain
+	We have a list of BLOCKS, each block, in the case of BitCoin, consists of Transactions. Same concept of blocks can be used for any other application domain as well.(Personal Information, Government, Hospitals, Facebook data).
+	Now how can no-one change the Block? CHAINING with keys, hashing. Using different Algos to generate hash key for a block(MD5,SHA-256, SHA-512). Then LinkedList each key to other block, so if the block is change the Key won't match.
+
+2. Blockchain | Prerequisites
+WHY?
+	Issues with Current Technology(Centralized)?
+		Banking-> Cost and Time
+		Avoided by decentralization
+	Trust issue solved by Ledgers(Big Database)
+		Ledgers provide immutability
+	Security
+		Cryptography
+
+WHO CAN?
+	Technical 
+		BlockCahin Developer
+		BlockCahin Architect
+	Non-Technical
+		BlockCahin Business Consultant
+
+PREREQUISITES
+	Cryptography
+	Distributed Computing
+	Game Theory		
+
+
+3. Cryptography in Blockchain
+	Issues with P2P network
+		1. Confidentiality
+		2. Integrity
+		3. Non repudiation
+		4. Authentication
+	Solution -> Cryptography
+
+4. Types of Cryptography
+	Symmetric Key
+	Asymmetric Key(Public key) ✔
+	Solves Confidentiality Issue ✘
+		A Encrypt's with B's public key
+		B decrypts with B's private key
+
+
+5. Digital Signature
+	Solves Authentication Issue
+		A Encrypt's with A's private key and then encrypt's with B's public key
+		B decrypts with B's private key and then decrypts with A's public key
+
+
+6. Nodes in Blockchain
+	Computer, Mobile etc.
+	Two Types:
+		Full Node (fully validated node)
+		Partial Node (light node)
+		Miners - Mine the blocks
+
+	Full Node (fully validated node) : Will have the entire Blockchain(Current Size(24/06/2019) - 225.477 GB https://www.blockchain.com/charts/blocks-size)
+		1st Stores the entire blockchain
+		2nd Verifies entire blockchain. Whenever a new node is added the Node will verify the entire blockchain.
+		Full node can also be a miner
+	
+	Miner-
+		To be a miner you need huge computing power
+
+	Partial Node
+		Can use for Wallet purpose
+
+
+7. Hashing in Blockchain 
+	   Input       -->     Hash Function      -->     Hash Value
+   (Any length/Size)   		(MD, SHA)               (Fixed Size)
+
+   -Output changes with each single/minute change in Input
+   -Reverse is not possible
+   Example: 
+   		Downloading Ubuntu from Official website and downloading from the torrent. To verify whether the torrent file is safe or non-malicious compare the hash value given by the official website with the torrent files hash value, if its the same then NON-MALICIOUS.
+
+
+8. Merkle Tree | Merkle Root
+	Every block in blockchain will have transactions(1 or many)
+	So we will either create has of each transaction or hash of  a block of all those transactions. We use Merkle Tree
+	Merkle Tree 
+	https://raw.githubusercontent.com/Gurubux/BlockChain/master/Telusko/Merkle_tree.PNG
+		10 transactions = 10 Hash values
+		10 Hash Values 	= 5 Hash Values
+		5 Hash Values 	= 3 Hash Values
+		3 Hash Values 	= 2 Hash Values
+		2 Hash Values 	= 1 ROOT Hash Value
+
+		Note : For Odd number of nodes , repeat the node and generate a hash
+
+-------------------------END OF PREREQUISITES--------------------
+
+
+9. Blockchain Technology Architecture
+	Public Blockchain - Bitcoin
+
+	What is inside each block?
+		I  Data - To, from, Money Info
+		II Block Header
+			1. Time-stamp
+			2. Version
+			3. Merkle Root
+			4. Difficulty Target
+			5. Nonce
+			6. Previous Hash Value
+		
+	To verify block we need Proof of Work(POW) for which we need 4th and 5th from header.
+
+	Proof of Work(POW)
+		- block has to be validated before making change
+		- it takes at-least 10 minutes to add the block in a blockchain, and then making changes in each block affected by it.
+		- blockchain will be stored on multiple machines.
+
+	To change a block we need:
+		1. Computing Power
+		2. 50% majority of blockchain network (Consensus Algorithm)
+ 	
+ 	1st block is called 'Genesis Block' the block created by Satoshi Nakamoto
+
+
+10. Types of Blockchain
+	1. Public Blockchain
+		Open
+		Anyone can be a part of it - Node or a Minor
+		Unknown entities
+	2. Private Blockchain(Single Company)
+		Known entities
+	3. Federated Blockchain(Group of companies)
+		Known entities
+
+	Note : Permissioned and Permissionless Blockchain
+
+
+11. Consensus in Blockchain
+	Blockchain is a Distributed Ledger
+	All nodes have a copy of BC and all are in the same state
+
+	Got a new Block?
+		This block is to added to the blockchain, WHICH Node will do it ? 
+			-> Let the latest Node do it? 
+				So Node_latest will add the block in its copy of blockchain and using the protocol we will distribute/replicate the same in all the other node. BUT what if it is malicious?
+			So how will all nodes come to a consensus to WHICH node must add the block? Consensus Algorithm
+
+		Consensus Algorithms
+			1. Proof of Work(POW) - Bitcoin
+				All nodes will spend some computing POWER doing some calculation and whoever wins the calculation/Puzzle they will add the block in the block chain. They will also receive some bitcoins.
+			2. Proof of Stake(POS) - Ethereum
+				In POW we have to spend huge amount of computing power. In POS, if you are a miner and if you want to add that block in a blockchain, you will be putting in some stake in that blockchain. Say you invest 5 bitcoins in that blockchain(If you are malicious you won't have any stake since you will then be kicked out of the chain)
+			3. Proof of Elapsed Time(POET) - Intel
+			4. Proof of Deposit(POD) 
+			4. Proof of Capacity(POC) 
+				Node with higher amount of capacity will win the block
+
+
+
+12. Proof of Work in Blockchain
+	Famous because of BitCoin 
+	All nodes will spend some computing POWER doing some calculation and whoever wins the calculation/Puzzle they will add the block in the block chain. They will also receive some bitcoins.
+	Drawbacks:
+		Wastage of resources
+		51% attack, if 6 of 10 nodes are malicious then you can hack the blockchain since 50%+ consensus is need to allow a node to add the blockchain.
+
+
+
+
+
+13. What is Ethereum?
+	-Technology/platform based on BlockChain, like bitcoin which is a p2p electronic cash system.
+	-Vitalik Buterin - Co-founder
+	-Ethereum is a platform having has EVM - Ethereum Virtual Machine, Used to make Decentralized application - Dapps 
+	-Cryptocurrency in Ethereum is ETHER
+	-GAS refers to the pricing value required to successfully conduct a transaction or execute a contract on the Ethereum blockchain platform.
+	-Language used to build Dapps is SOLIDITY
+	-Uses Proof of Stake(POS)
+
+
+14. Smart Contract | Ethereum
+	-If Programming code, in solidity language, represents any type of Contract that that code is call smart contract. 
+	-Example in supply chain.
+		A buys from B online and prepays. B asks C to deliver. If C doesn't deliver the trust is broken from A to B and B to C. 
+		Thus what if we make a contract such that 
+		Prepay but,
+		IF ( Product Deliver to A)
+			THEN B will receive the money
+			AND 
+			THEN C will receive the money
+	
+
+15. Drawbacks of Blockchain
+	Public Blockchain like BitCoin, Ethereum, EOS
+	1. Complex
+	2. Slow
+		7-10 transaction / sec in contrast to VISA which can make 1000s transactions / sec
+	3. POW computational resources wastage
+	4. Security/Privacy
+	5. 51% Attack
+
+
+16. What is Hyperledger?
+	Not a Blockchain
+	Not a Cryptocurrency
+	Not a Company
+
+	Its a Project
+	Public blockchain such as Ethereum and blockchain are about Business To Consumer market
+	Hyperledger is a about Business to Business market(Enterprise)
+
+	Hosted by Linux Foundations
+	Intel, IBM is getting involved in Hyperledger
+	HyperLedger has multiple tools and Frameworks under it
+	Frameworks include:
+		Iroha
+		Sawtooth - by Intel
+		Fabric 
+		Indy
+		Burrow
+	Tools include
+		Hyperledger Composer
+		Hyperledger Cello
+		Hyperledger Quilt
+		Hyperledger Explorer
+		(These tools can be used to make permissioned blockchain)
+
+17. First Smart Contract (Part 1) | Metamask setup | Blockchain | Ethereum
+18. First Smart Contract (Part 2) | Remix | Ethereum | Blockchain
+19. First Smart Contract (Part 3) | RinkeBy | Ethereum | Blockchain
+20. Smart Contract with Front End
+21. Smart Contract with Web Front End (Part 2)
