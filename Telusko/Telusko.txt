@@ -235,7 +235,67 @@ PREREQUISITES
 		(These tools can be used to make permissioned blockchain)
 
 17. First Smart Contract (Part 1) | Metamask setup | Blockchain | Ethereum
+MetaMask Google Chrome Plugin to connect to a Ethereum network
+Unique SeedPhrase for each account.
+Get free Ethers using RinkbyTestNetwork https://www.rinkeby.io/#faucet
+IDE : Remix Ethereum https://remix.ethereum.org/#optimize=false&evmVersion=null
+
+
+
 18. First Smart Contract (Part 2) | Remix | Ethereum | Blockchain
+//Set a compiler level
+pragma solidity 0.4.25;
+contract Bank
+{
+    int bal;
+    
+    constructor() public
+    {
+        bal = 1;
+    }
+    
+    //view is only for fetching value not manipulating data
+    function getBalance() view public returns(int)
+    {
+        return bal;
+    }
+    
+    function withdraw(int amt) public
+    {
+        bal = bal - amt;
+    }
+    
+    function deposit(int amt) public
+    {
+        bal = bal + amt;
+    }
+}
+Compile
+Deploy
+Run
+
+
 19. First Smart Contract (Part 3) | RinkeBy | Ethereum | Blockchain
+	Select "Injected Web3" to run the same of test network instead of "Javascript VM" i.e Local
+	Deploy
+	Run
+
+
 20. Smart Contract with Front End
+	Things we need to connect the Smart Contracts with Front End Web page
+	1. In Compile Tab > ABI
+	2. In Deploy and Run Tx Tab > Address of the deployed contract.
+
+	To connect FrontEnd index.html to our smart contract we have the amazing library named WEB3
+	https://github.com/ethereum/web3.js/
+	https://web3js.readthedocs.io/en/1.0/
+	https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/ 
+	This is the Ethereum JavaScript API which connects to the Generic JSON RPC spec.
+
+	You need to run a local or remote Ethereum node to use this library.
+
+	Get Balance
+	
 21. Smart Contract with Web Front End (Part 2)
+	Privacy Settings Disable to get Account info.
+	Deposit and Withdraw
