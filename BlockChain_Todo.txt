@@ -5,17 +5,6 @@
 4. Blockchain specialization 	https://www.coursera.org/specializations/blockchain
 
 
-1. Master Python for Data Science 	https://www.linkedin.com/learning/paths/master-python-for-data-science
-2. Advance Your Skills as a P Data Expert 	https://www.linkedin.com/learning/paths/advance-your-skills-as-a-python-data-expert
-3. Become a Data Analytics Specialist 	https://www.linkedin.com/learning/paths/become-a-data-analytics-specialist
-4. Become a Machine Learning Specialist 	https://www.linkedin.com/learning/paths/become-a-machine-learning-specialist
-5. Get Ahead In Data Science  	https://www.linkedin.com/learning/paths/get-ahead-in-data-science
-6. Deep Learning: Image Recognition 	https://www.linkedin.com/learning/deep-learning-image-recognition
-7. Deep Learning: Face Recognition 	https://www.linkedin.com/learning/deep-learning-face-recognition
-8. Building DL Applications with Keras 2.0 	https://www.linkedin.com/learning/building-deep-learning-applications-with-keras-2-0	
-
-
-
 Bitdegree 	https://www.bitdegree.org/courses/learn-solidity-space-doggos/#
 
 CryptoZombies 	https://cryptozombies.io/en/course/
