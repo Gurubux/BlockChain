@@ -243,6 +243,7 @@ IDE : Remix Ethereum https://remix.ethereum.org/#optimize=false&evmVersion=null
 
 
 18. First Smart Contract (Part 2) | Remix | Ethereum | Blockchain
+Smart Contract Bank CODE 
 //Set a compiler level
 pragma solidity 0.4.25;
 contract Bank
@@ -270,6 +271,7 @@ contract Bank
         bal = bal + amt;
     }
 }
+
 Compile
 Deploy
 Run
@@ -295,7 +297,7 @@ Run
 	You need to run a local or remote Ethereum node to use this library.
 
 	Get Balance
-	
+
 21. Smart Contract with Web Front End (Part 2)
 	Privacy Settings Disable to get Account info.
 	Deposit and Withdraw
