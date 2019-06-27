@@ -1,0 +1,77 @@
+BLOCKCHAIN BASICS by  Jonathan Reichental
+----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
+
+INTRODUCTION
+	WELCOME AND INTRODUCTION (VIEWED)
+	It`s a novel way to store, validate, authorize and move digital transactions across the Internet. It`s called a blockchain and it has the potential to be a highly disruptive technology, not just in the world of digital currency but in a vast number of organizational contexts. 
+----------------------------------------------------------------------------------------------------------------------
+1. TRUSTING THE INTERNET
+	RISK AND SECURITY CHALLENGES WITH USING THE INTERNET TODAY
+	 Beyond some of the obvious, social media trolling, software viruses, online fraud, fake news, and criminal hacking, the internet often struggles with the fundamental challenges of trust. We face ongoing questions such as is the person you are doing business with online really who they say they are? Is a service real? And are only authorized people granted access to private systems?
+	 If we want ironclad online voting, workable digital currencies, confidence in machines talking to machines, self-driving cars that securely negotiate with each other, improved and seamless methods to authenticate identity, and more, we`re going to need a more secure and trustworthy internet.  
+
+	RETHINKING THE TRADITIONAL DATABASE
+		
+		QUIZ
+		A distributed database does not use the same processor for all storage needs .
+----------------------------------------------------------------------------------------------------------------------
+2. WHAT IS THE BLOCKCHAIN?
+	WHAT PROBLEMS DOES THE BLOCKCHAIN SOLVE?
+		Centralizaed Systems Issues:
+			1. Single Point of Failure, can be compromised
+			2. All Power is held by Central Authority
+		 In most cases, by extension, humans remain the final arbiter of the validity of a transaction. We see this in most contract work. A contract between two entities completed over the Internet still requires one or more central authority to validate data. For example, with a mortgage, banks must validate savings and approve loans. Title companies must validate properties. And legal professionals must validate signatures and other contractual requirements. Each one of these central authorities has unique power that levies considerable overhead in a mortgage transaction. The transactions in the very databases all take time to process, cost money, are vulnerable to hacking, provide limited participation from those involved, require special skills, and can be error prone. 
+		 "BLOCKCHAIN SOLVES"
+		 The blockchain is a new type of database. Instead of a centralized or decentralized database on one or more servers, a blockchain database is installed on individual computers used by the people who use the database. In fact, a copy of the same database is installed on every computer of every user who uses that database. As I`ve already demonstrated, in a central database we have the database on one server in the center. In the decentralized database, it is spread out among several servers. However, a distributed blockchain database is copied to every client computer on this network. There are no database servers. 
+		 "WHAT HAPPENS"
+		 Now, let`s walk through what happens when a transaction takes place in this distributed database. To keep things really simple, we`ll use our earlier example of a contacts database that has names and phone numbers, our electronic phone book. Let`s start with creating a rule for our phone book. In it, we have decided we only want the owner of a phone number to be able to modify it. This rule is now codified into our software. Okay, so I`ve just received my new smartphone and I need to update my phone number in this electronic phone book. First I make the change in the phone book database that`s on my computer. Next, my database transmits this transaction to every identical database on the distributed network over the Internet. At this point, all of the individual computers where the database resides have to agree that I have the permission to change my phone number. Since all the distributed databases already know this rule, that is, only the owner can change the phone number, they allow my change. We can think of as "consensus-based permission" because computers on the network have to reach agreement before a change is allowed. Each database then appends a new block of data in the database that contains my new phone number. 
+		 Blocks are only added and never deleted. All changes are simply captured as new blocks. We call this characteristic "immutability". Put another way, a blockchain database is an immutable database. We can think of the blockchain database as keeping track of changes, like an accounting ledger where financial transactions are recorded. For this reason, the blockchain is often referred to as a "distributed ledger". 
+		 Let`s go a little deeper on this example to reveal just how transformative it is. First, there is no central authority. The power is now distributed across the entire network of users of the database. No single person or system can approve or deny my phone number change in the electronic phone book. Power has been decentralized. It requires the consensus of all participating computers. Since the distributed database knows that I am the only person allowed to change my own phone number, it is almost hack-proof. We are able to create these immutable transactions. 
+		 A hacker would need to change the information on hundreds and likely thousands of computers in order to get the authority to make the change. This quality then ensures integrity to the database creates inherent trust. It`s why the blockchain is sometimes referred to as the "trust protocol". 
+		 Next, when I made the change to my phone number, the change was accepted and reflected almost immediately. A small delay does exist, only because participating requests for changes to the blockchain are queued up and processed in order. 
+
+
+		 "TO SUMMARIZE", this new model has no central database. 
+		 A blockchain database is installed on all the computers that use the database. 
+		 Any transaction in that database must be validated by all the participating members. 
+		 It has the power to be almost hack-proof. 
+		 It eliminates central authorities, significantly reduces transaction costs. 
+		 It quickly processes complex transactions and more. 
+		 To fully understand the blockchain requires us to understand its origin story, and it begins with BITCOIN.
+
+
+
+	THE BIRTH OF THE BLOCKCHAIN IN BITCOIN
+	WHAT NEW OPPORTUNITIES DOES THE BLOCKCHAIN ENABLE?
+
+
+		QUIZ
+		1. What`s the driving factor that makes a blockchain database immutable?
+			new blocks rely on every previous block
+		2. Bitcoin eliminates the need for any intermediaries in a transaction.
+		3. Bitcoin Doesn`t eliminiate Duplication
+
+
+----------------------------------------------------------------------------------------------------------------------		
+3. TRANSFORMING TRANSACTIONS
+	EXAMPLES OF THE BLOCKCHAIN IN ACTION TODAY
+	- 1. There continues to be a great interest in technologies to "HELP TRACK STOLEN DIAMONDS", in addition to knowing whether a diamond is associated with a conflict zone. A startup called Everledger has begun to use blockchain to store information on almost one million diamonds. Each diamond is scanned to glean 40 unique points that are then condensed into a digital footprint. This is then entered into the blockchain. Each time a diamond moves say from a seller to a buyer, a new block is created and over time a full, secure digital trail of ownership is established. The adoption of this solution is growing and Everledger is attracting attention from investors. 
+	- 2. Beyond diamonds, the same tool may soon be expanded to manage and track art, expensive watches, luxury cars, and other unique items of value. This blockchain solution potentially solves a longstanding intractable challenge. 
+	- 3. For the next example, how about a "VENTURE CAPITAL FIRM" without essential owner, where funding decisions are made by shareholders not VC`s. The DAO which stands for decentralized autonomous organization, raised $168 million from cryptocurrency and is entirely run by those that are invested in it. Its governance is completely transparent unlike traditional VC`s where functions and rules are private and opaque. The DAO has not been without serious challenges including several security breaches. Not necessarily dispelling the security promise of blockchain, but more a reflection on its particular implementation. It`s fair to say the bonus of innovation exhibited by the DAO is subject to the same teething problems that introducing any new high risk product and service experiences. And then to these such as the DAO raises the stunning possibility of autonomous organizations; businesses without leaders, without a primary geographic location, and not beholden to any government laws. Now whether this can be sustained, only time will tell. 
+	- 4. For the final example we`ll look at "VOTING" on the blockchain. In 2016, Colombians voted on a peace treaty between the government and FARC, the Revolutionary Armed Forces of Colombia. There were a variety of limitations on enabling the six million Colombians living abroad to participate in the vote. So an organization called Democracy Earth experimented with the blockchain to capture their voices online. As we discussed earlier, the inherent challenges of online voting in any context is proving an identity to be true. Using this new technology enabled authenticating votes. In addition, to push voting innovation, Democracy Earth gave citizens more than a no and yes choice to the peace treaty. They were given sub-themes to indicate by vote the relative importance of each one. While the votes could not be added to the official ballot, this voting experience did give a voice to a larger group of Colombians and has triggered a rigorous debate in Colombia about the use of online voting in the future. The experiences and results are being studied by many around the world. 
+
+	If you`re like me, it`s hard not to be impressed by these first attempts to innovate using the blockchain. In each of these instances, historically big and difficult problems are finding a fresh and innovative solution. As with any new emerging technology, these first movers are taking risks and laying the groundwork for everyone else who follows.
+
+	THINKING ABOUT THE FUTURE OF BLOCKCHAIN INNOVATION
+		Slock.it
+		
+	Quiz 
+	A distributed ledger can contain executable code to run complex functions .
+----------------------------------------------------------------------------------------------------------------------
+4. CHALLENGES AHEAD
+	THE POTENTIAL OBSTACLES TO BLOCKCHAIN ADOPTION
+	RISKS TO EXISTING SOLUTIONS AND ENTERPRISES
+
+CONCLUSION
+NEXT STEPS
