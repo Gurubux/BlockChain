@@ -1,0 +1,337 @@
+BLOCKCHAIN: LEARNING SOLIDITY
+**********************************************************************************************************************
+1. INTRODUCTION AND SETUP
+**********************************************************************************************************************
+INTRODUCTION TO SOLIDITY
+INTRODUCTION TO SMART CONTRACTS
+THE ETHEREUM VIRTUAL MACHINE (EVM)
+INSTALL THE SOLIDITY COMPILER
+
+**********************************************************************************************************************
+2. SOLIDITY BASICS
+**********************************************************************************************************************
+SOLIDITY SYNTAX BASICS
+BASIC SYNTAX OF A CONTRACT
+TYPES IN SOLIDITY
+UNITS AND GLOBAL VARIABLES
+OTHER SPECIAL VARIABLES
+FUNCTIONS OVERVIEW
+OPERATORS IN SOLIDITY
+CONDITIONALS IN SOLIDITY
+
+**********************************************************************************************************************
+3. YOUR FIRST CONTRACT
+**********************************************************************************************************************
+SET THE INITIAL VARIABLES
+ADD YOUR MODIFIERS
+FINALIZE THE FUNCTIONS
+TEST YOUR CONTRACT
+
+**********************************************************************************************************************
+4. SOLIDITY CONSIDERATIONS
+**********************************************************************************************************************
+REVIEW THE STYLE GUIDE
+DOCUMENTATION
+
+
+**********************************************************************************************************************
+1. INTRODUCTION AND SETUP
+**********************************************************************************************************************
+INTRODUCTION TO SOLIDITY
+
+DOCUMENTATION - https://solidity.readthedocs.io/en/v0.5.10/
+EXAMPLES 	  - https://www.stateofthedapps.com/
+DAAP          - Decentralized Apps
+
+Ethereum is the platform to build dapps and solidity is the language
+EVM
+
+
+INTRODUCTION TO SMART CONTRACTS
+- A smart contract is basically code or an automated process that handles the transaction in between two parties without a middle man.
+
+- Example
+	You`d like to have your `WILL` handled by a smart contract. 
+	You could define the specific conditions of this contract through code and upon your death this program and not a third party would handle your will. 
+		For example, you could write out a condition that your grandson receives 10% of your heritage but only if he is enrolled into a university and is 21 years of age or older. And add as many rules in the smart contract as you wish, the smart contract or the code would handle your affairs without the need of a third party. 
+		So you deposit your inheritance into this smart contract most likely into a cryptocurrency, and until your condition of death and any other conditions are met, will the contract execute. 
+	This in it`s simplest form constitutes a smart contract and anywhere a transaction needs to happen in between two parties, you could use a smart contract putting you in full control of these transactions and automating it. 
+
+THE ETHEREUM VIRTUAL MACHINE (EVM)
+- Ethereum itself is a programmable blockchain versus having a specific use like Bitcoin, therefore provides a powerful environment for any programmers to build really cool stuff with the smart contract paradigm we explained earlier. Like any blockchain environment, Ethereum offers a peer-to-peer network so transactions are safe and proven across the network. At the heart of the system is the EVM or the Ethereum Virtual Machine. This is where all your smart contracts are executed. It is completely isolated and has no access to file systems or processes. 
+- So each node in the system runs the EVM so it can maintain consensus across the network. And as per Ethereum`s documentation, Ethereum is best suited for applications that automate direct interaction between peers or facilitate coordinated group action across a network.
+	- Ethereum is the environment. 
+	- The EVM executes the transactions. 
+	- Solidity is the language to program smart contracts, commonly called Dapp. 
+	- And finally there is you, the programmer, who can use all these pieces to create your own application leveraging this peer-to-peer network and programming language.
+INSTALL THE SOLIDITY COMPILER
+
+**********************************************************************************************************************
+2. SOLIDITY BASICS
+**********************************************************************************************************************
+SOLIDITY SYNTAX BASICS
+// import solidity
+pragma solidity ^0.4.0;
+
+// import
+import "filename";
+import * as symbolname from "filename";
+import {symbol1 as alias, symbol2} from "filename";
+
+// your first contract
+contract SimpleContract {
+    // state variables,functions, Events
+
+}
+
+
+----------------------------------------------------------------------------------------------------
+BASIC SYNTAX OF A CONTRACT
+
+
+----------------------------------------------------------------------------------------------------
+TYPES IN SOLIDITY
+
+// import solidity
+pragma solidity ^0.4.0;
+contract SimpleContract_2 {
+// string
+string name = "manny";
+
+// integers
+uint storedata = 34;
+
+// boolean
+bool atrueorfalsevalue = false;
+
+// address
+address walletAddress = 0x72ba773893b;
+
+// arrays
+string[] names;
+
+// bytes
+bytes32 code;
+
+// Struct to define 
+struct User {
+    string firstName;
+    string lastName;
+}
+
+// enums
+enum userType {buyer, seller}
+
+// mappings - like dictionaries in Python
+mapping(address => uint) public balances;
+}
+----------------------------------------------------------------------------------------------------
+UNITS AND GLOBAL VARIABLES
+// Special variables that we don't have access to
+contract Simple {
+    // ether sazbo finney wei <-- CANNOT USE THESE VARAIBLES, because these are units that we can use inside of our contracts
+    bool isEqual = (1 ether == 5000 finney); // THerefore can use them like this <---
+    
+    // time units
+    bool isTime = (1 == 1 seconds); // Same with time units seconds,minutes, hours - cann use them but not create a new one.
+    
+    // seconds, minutes, hours, days, weeks (years have been deprecated)
+     bool isTime = (1 hours == 60 minutes);
+}
+
+
+----------------------------------------------------------------------------------------------------
+OTHER SPECIAL VARIABLES
+// Special variables that we have access to
+contract Simple {
+// block
+block.number;
+    block.difficulty;
+    block.coinbase ();
+    
+    /* your comments go here
+    and here */
+    
+    // message
+    msg.sender;
+    msg.value;
+    msg.data;
+    
+    // transaction
+    tx.origin
+    
+}
+
+----------------------------------------------------------------------------------------------------
+FUNCTIONS OVERVIEW
+
+contract Simple {
+//In Solidity, your functions can take input as parameters, like most programming languages. 
+//But where it differs from most is you can have functions return multiple outputs. 
+// pure - A Pure fucnction
+  function calcs(uint _a, uint _b) public pure 
+  returns (uint o_sum, uint o_product) {
+      o_sum = _a + _b;
+      o_product = _a * _b;
+  }
+}
+
+
+
+----------------------------------------------------------------------------------------------------
+OPERATORS IN SOLIDITY
+
+contract Simple {
+    // Arithmetic operators + - * / % **
+    uint a = 2;
+    uint b = 3;
+    
+    uint c = a ** b;
+    
+    // logical operators
+    // !  && || == !=
+    bool hasMoney = !false;
+    
+    // Bitwise operators
+    // & | ^ ~ >> <<
+    bytes1 contractValue = 0x02 | 0x01;
+    
+}
+
+----------------------------------------------------------------------------------------------------
+CONDITIONALS IN SOLIDITY
+contract Simple {
+    // if statement
+    if (a == 2) {
+        // code if condition met
+    } else {
+        
+    }
+    
+    // checking condition first
+    while (a >= 0) {
+        // code if condition met
+    }
+    
+    // do run this code until condition no 
+    // longer true
+    do {
+        // do this code first
+    } while (a >= 0)
+    
+    // for loop
+    for (uint i=0; i>=50; i++) {
+        // code 
+    }
+    
+}
+**********************************************************************************************************************
+3. YOUR FIRST CONTRACT
+**********************************************************************************************************************
+SET THE INITIAL VARIABLES
+contract Inheritance {
+    address owner;
+    bool deceased;
+    uint money;
+    
+    constructor() public payable {
+        owner = msg.sender;
+        money = msg.value;
+        deceased = false;
+    }
+    
+    address[] wallets;
+    
+    mapping (address => uint) inheritance;
+
+}
+
+
+-------------------------------------------------------------------------------------------
+ADD YOUR MODIFIERS
+
+//And this is pretty much how you work with modifiers. So these two modifiers will be executed before the function runs in order to check for these values. Once we have a true on these modifiers, then the function that runs the contract can actually execute.
+contract Inheritance {
+    address owner;
+    bool deceased;
+    uint money;
+    
+    constructor() public payable {
+        owner = msg.sender;
+        money = msg.value;
+        deceased = false;
+    }
+    
+    modifier oneOwner {
+        require (msg.sender == owner);
+        _;
+    }
+    
+    modifier isDeceased {
+        require (deceased == true);
+        _;
+    }
+    
+    address[] wallets;
+    
+    mapping (address => uint) inheritance;
+
+}
+
+-------------------------------------------------------------------------------------------
+FINALIZE THE FUNCTIONS
+
+contract Inheritance {
+    address owner;
+    bool deceased;
+    uint money;
+    
+    constructor() public payable {
+        owner = msg.sender;
+        money = msg.value;
+        deceased = false;
+    }
+    
+    modifier oneOwner {
+        require (msg.sender == owner);
+        _;
+    }
+    
+    modifier isDeceased {
+        require (deceased == true);
+        _;
+    }
+    
+    address[] wallets;
+    
+    mapping (address => uint) inheritance;
+    
+    function setup(address _wallet, uint _inheritance) public oneOwner {
+        wallets.push(_wallet);
+        inheritance[_wallet] = _inheritance;
+    }
+    
+    function moneyPaid() private isDeceased {
+        for (uint i=0; 0<wallets.length; i++) {
+            wallets[i].transfer(inheritance[wallets[i]]);
+        }
+    }
+    
+    function died() public oneOwner {
+        deceased = true;
+        moneyPaid();
+    }
+
+}
+//So once we first set up the actual contract, we're gonna create a wallet, which will pass the actual inheritance pending the person is dead. 
+
+
+-------------------------------------------------------------------------------------------
+TEST YOUR CONTRACT
+
+**********************************************************************************************************************
+4. SOLIDITY CONSIDERATIONS
+**********************************************************************************************************************
+REVIEW THE STYLE GUIDE
+DOCUMENTATION
+

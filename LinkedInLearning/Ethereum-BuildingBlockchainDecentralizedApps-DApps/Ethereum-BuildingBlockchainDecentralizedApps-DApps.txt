@@ -1,0 +1,138 @@
+1. GETTING SET UP
+WHAT WE WILL BE BUILDING
+SERVER SETUP
+INSTALL METAMASK
+
+2. INTRODUCTION TO DAPPS AND ETHEREUM
+THE ETHEREUM BLOCKCHAIN, PART 1
+THE ETHEREUM BLOCKCHAIN, PART 2
+SMART CONTRACTS EXPLAINED
+THE CASE FOR DECENTRALIZED APPS OR DAPPS
+SOME SAMPLE DAPPS
+HOW ETHEREUM WORKS
+INTERACTING WITH THE ETHEREUM NETWORK
+
+3. WRITING A SMART CONTRACT
+INTRO TO SOLIDITY
+WHAT DOES SOLIDITY LOOK LIKE?
+CREATING A SIMPLE SMART CONTRACT
+COMPILING AND MIGRATING SMART CONTRACTS
+TESTING WITH TRUFFLE
+
+4. BUILDING A DAPP
+OUR SIMPLE DAPP UI
+INTRO TO WEB3.JS
+INTERACTING WITH THE BLOCKCHAIN, PART 1
+INTERACTING WITH THE BLOCKCHAIN, PART 2
+CALLING OUR SMART CONTRACT, PART 1
+CALLING OUR SMART CONTRACT, PART 2
+USING METAMASK IN OUR CLIENT
+
+5. DEPLOYING TO THE ETHEREUM NETWORK
+INSTALLING GETH TO HOST LOCALLY
+TESTNET/ROPSTEN AND MAINNET DEPLOYMENT, PART 1
+TESTNET/ROPSTEN AND MAINNET DEPLOYMENT, PART 2
+DEPLOYING RESOURCES IN SWARM
+
+**********************************************************************************************************************
+1. GETTING SET UP
+**********************************************************************************************************************
+WHAT WE WILL BE BUILDING
+In this course, we're going to be building a simple dapp using the Ethereum blockchain. 
+
+- It will consist of two basic elements, 
+	1. a smart contract and 
+	2. a web interface. 
+
+1. A smart contract
+	At the heart of any dapp is the blockchain, and most frequently a smart contract or multiple smart contracts that allow for customizing access to the blockchain where we can store our data. 
+	We'll start by getting familiar with Solidity, the most used language for writing smart contracts for the Ethereum network. 
+	We'll build a very simple escrow-like smart contract that allows us 
+		- to deposit ether into the contract only to be released by a third party to its eventual destination. 
+			(Keep in mind, of course, that it's exactly these kind of third parties that the blockchain's going to allow us to circumvent, but we're doing it this way for simplicity.  We could easily modify this to have the funds released based on some kind of off-chain event that won't require any user interaction. )
+
+2. A web interface. 
+	We're then gonna build a user interface that will allow us 
+		- to send ether from one address to another, 
+		- check the balance that's being stored, 
+		- see who the approver is, and 
+		- finally enable the approver to approve the transaction. 
+
+This simple dapp will allow you to see how you can write dapps and interact with the Ethereum blockchain. So let's dive deeper and start building our dapp.
+
+
+-------------------------------------------------------------------
+SERVER SETUP
+Truffle -  npm install -g truffle
+Ganache -  https://github.com/trufflesuite/ganache/releases
+ISSUE: 
+	https://www.trufflesuite.com/docs/truffle/reference/configuration#resolving-naming-conflicts-on-windows
+
+http://127.0.0.1:9545/
+-------------------------------------------------------------------
+INSTALL METAMASK
+Metamask enables us to do is have a wallet that's built into our browser.
+
+
+
+
+
+
+**********************************************************************************************************************
+2. INTRODUCTION TO DAPPS AND ETHEREUM
+**********************************************************************************************************************
+THE ETHEREUM BLOCKCHAIN, PART 1
+-------------------------------------------------------------------
+THE ETHEREUM BLOCKCHAIN, PART 2
+-------------------------------------------------------------------
+SMART CONTRACTS EXPLAINED
+-------------------------------------------------------------------
+THE CASE FOR DECENTRALIZED APPS OR DAPPS
+-------------------------------------------------------------------
+SOME SAMPLE DAPPS
+-------------------------------------------------------------------
+HOW ETHEREUM WORKS
+-------------------------------------------------------------------
+INTERACTING WITH THE ETHEREUM NETWORK
+-------------------------------------------------------------------
+
+**********************************************************************************************************************
+3. WRITING A SMART CONTRACT
+**********************************************************************************************************************
+INTRO TO SOLIDITY
+-------------------------------------------------------------------
+WHAT DOES SOLIDITY LOOK LIKE?
+-------------------------------------------------------------------
+CREATING A SIMPLE SMART CONTRACT
+-------------------------------------------------------------------
+COMPILING AND MIGRATING SMART CONTRACTS
+-------------------------------------------------------------------
+TESTING WITH TRUFFLE
+
+**********************************************************************************************************************
+4. BUILDING A DAPP
+**********************************************************************************************************************
+OUR SIMPLE DAPP UI
+-------------------------------------------------------------------
+INTRO TO WEB3.JS
+-------------------------------------------------------------------
+INTERACTING WITH THE BLOCKCHAIN, PART 1
+-------------------------------------------------------------------
+INTERACTING WITH THE BLOCKCHAIN, PART 2
+-------------------------------------------------------------------
+CALLING OUR SMART CONTRACT, PART 1
+-------------------------------------------------------------------
+CALLING OUR SMART CONTRACT, PART 2
+-------------------------------------------------------------------
+USING METAMASK IN OUR CLIENT
+
+**********************************************************************************************************************
+5. DEPLOYING TO THE ETHEREUM NETWORK
+**********************************************************************************************************************
+INSTALLING GETH TO HOST LOCALLY
+-------------------------------------------------------------------
+TESTNET/ROPSTEN AND MAINNET DEPLOYMENT, PART 1
+-------------------------------------------------------------------
+TESTNET/ROPSTEN AND MAINNET DEPLOYMENT, PART 2
+-------------------------------------------------------------------
+DEPLOYING RESOURCES IN SWARM
