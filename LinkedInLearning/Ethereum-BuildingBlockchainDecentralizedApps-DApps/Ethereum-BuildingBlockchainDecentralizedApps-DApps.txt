@@ -65,10 +65,24 @@ This simple dapp will allow you to see how you can write dapps and interact with
 SERVER SETUP
 Truffle -  npm install -g truffle
 Ganache -  https://github.com/trufflesuite/ganache/releases
+
+truffle version
+>>>
+	Truffle v5.0.26 (core: 5.0.26)
+	Solidity v0.5.0 (solc-js)
+	Node v10.16.0
+	Web3.js v1.0.0-beta.37
+ 
+ I now have an environment. It's a command line environment where I can do a bunch of things. I'm gonna do testing of my smart contracts, I can run a little testing server, I can actually do building and migrations of my smart contracts. 
+
 ISSUE: 
 	https://www.trufflesuite.com/docs/truffle/reference/configuration#resolving-naming-conflicts-on-windows
+	removed .JS from the PATHTEXT environment variable
+
+
 
 http://127.0.0.1:9545/
+
 -------------------------------------------------------------------
 INSTALL METAMASK
 Metamask enables us to do is have a wallet that's built into our browser.
@@ -82,12 +96,123 @@ Metamask enables us to do is have a wallet that's built into our browser.
 2. INTRODUCTION TO DAPPS AND ETHEREUM
 **********************************************************************************************************************
 THE ETHEREUM BLOCKCHAIN, PART 1
+
+- Decentralized means there's no central agency or central server through which anyone has to go to access data or functionality. In fact, with something like the Ethereum Network, every node that's running has a copy of everything that's on every other node, meaning I can talk to any node and get the information from there. It's not critical that I go to one node or the other. 
+- Like Bitcoin, Ethereum is a blockchain technology. Where as Bitcoin was designed to essentially be a store of value, Ethereum was conceived to handle programming and to store data for programming. 
+- Bitcoin does have some programming functionality, but it's not nearly as deep nor as simple as it is in the Ethereum network. 
+- Ethereum offers a full Turing complete programming environment. 
+- There are some slight differences in implementation. One main difference is Bitcoin uses a MERKLE TREE STRUCTURE and this is essentially a way of compiling each of the transaction blocks and then including those blocks as you move up into a tree of blocks and encrypting a hash key for each one. So when you compare those hash keys you can see. And I'll give you an example later that you can see. 
+- Ethereum has a similar type of encryption key, however it uses what's called a PATRICIA TREE, which includes not just the transaction, but also STATE information and receipt information. Bitcoin doesn't have any general state information. Essentially it's missing some key information that you might need for programming, things like timestamps that could be critical in some types of applications like an auction. Ethereum however, includes the current state, which means we can get information other than just transactions. 
+- So overall, looking at the Ethereum network, it handles state management, not just transactions. We have greater access because of that to things like timestamps that can help us when we're writing applications. 
+- And overall, we have more programmatic ability because we have a deeper programming environment and a more simplified programming language. 
+- Ethereum has some key elements to their philosophy when developing their protocol. 
+		1. SIMPLICITY -  One of the key design philosophies is that the Ethereum protocol should be as simple as possible. The main goal is that an average 				programmer should be able to learn Ethereum and be able to program in this environment. It should be accessible so that anyone could 				 program in 	this environment and write apps for this new protocol. 
+		2. UNIVERSALITY - this means that Ethereum isn't going to have features, it's going to be a Turing complete scripting language, which anyone can use 				   to develop anything, but it's not going to have specific apps built into it, that's up to the programmer. Insofar as possible, they 				  	  will make it so that anyone can use this to do anything, but they're not going to focus on developing domain specific application. 
+		3. MODULARITY - Ethereum is built to be modular. The idea is that you can utilize different elements of the Ethereum network as needed. 							In addition, when they create new parts of Ethereum network, they're usually built as plugins, as separate, feature complete 						libraries. The idea is that the Ethereum development environment should always be maximized to develop the whole ecosystem. 
+		5. AGILITY	  - Ethereum is designed and planned to be agile. The main thinking is that nothing is set in stone and that anyone should be able to 					question and change things as time evolves and as usage of the platform evolves. 
+
+		4. NON-DISCRIMINATION AND NON-CENSORSHIP - There shouldn't be any way to prevent people from doing specific types of thing using the Ethereum network. 											  It should be open to anyone.
+
+
+
+
 -------------------------------------------------------------------
 THE ETHEREUM BLOCKCHAIN, PART 2
+'https://github.com/ethereum/wiki/wiki/White-Paper'
+ Ethereum Nodes don't have to run full nodes but can validate based on current state - But miners do for security
+ 	Ethereum nodes only need to store the state, instead of the entire blockchain history. Blockchain history can be validated through parsing of the encrypted tree. Any wrong item is going to change the hash for every branch above it. Now one of the issues with this is it could be a security risk, because there could be fewer heavy nodes with all the transactions, and you could fake things to the light nodes. For example, in the illustration above, one of the hashes here a little ways up the tree would be actually incorrect, but it's been spoofed and changed, and this can happen to alter one of the transactions which would make it look as if a different transaction occurred. When you're running heavy nodes, it would find this far down in the chain and discover that there was an issue. 
+ 		One of the ways that Ethereum gets around this is they require every minor to run a full node. 
+
+ 		Ethereum is going to be moving in 2018 to PROOF OF STAKE. 
+ 			What this means is that it will no longer require mining, which is a proof of work concept, but rather anyone who owns a certain amount of coins will be able to stake that coin and their processing power will then be used in order to solve all the problems and make sure that the blockchain is secure. 
+ 		In addition, moving to proof of stake will lower the energy requirements of the entire Ethereum network, because mining is very energy intensive. 
+ 	
+ 	So in the end, the thing to remember is that Ethereum is a blockchain that supports apps. Ethereum blockchain has many of the features that come with other blockchains, like Bitcoin, 
+ 		a mutability, 
+ 		redundancy, 
+ 		public records and more, 
+ 	However the main difference is that it was written to SUPPORT PROGRAMMING and MANAGING STAKE, and that's what makes it a POWERFUL TOOL FOR DEVELOPERS.
+
 -------------------------------------------------------------------
 SMART CONTRACTS EXPLAINED
+
+ The real strength of Ethereum lies in the creation of smart contracts. One way to think of smart contracts is that they're like a special kind of a class. In this class, public functions can be called on externally. And data will be stored in the blockchain. 
+
+ One of the key differences between running this and another programming environment, however, is that when you call a write operations, it will COST GAS, which is Ethereum. 
+ Keep in mind that some of these write operations will involve sending money as well. 
+ Every contract will run in its own address, its own box that stored in account. This account will be similar to a wallet address that you might have starting with zero x and having some letters and numbers afterwards. 
+
+ The original idea for Ethereum was essentially to do some coding that enables you to put money in holding bin, and this holding bin would require certain parameters to be met. And once those parameters will be met, it could then release the money to someone else or to a number of different people or return the money to the original individual who sent it. 
+
+ However, smart contracts have evolved considerably. They've evolved to encompass all kinds of code that's executed on a blockchain node. This means they're behaving much like a normal programming class or an executable service. 
+
+ So each smart contract is essentially 
+ 	- a grouping of functions and 
+ 	- state variables 
+ 	that reside on the blockchain and also can store data and interact with that blockchain opening unlimited possibilities to what we can do. Not just in terms of financial applications, but also in terms of decentralized applications. 
+
+ 	When you create a smart contract, it will be uploaded as BYTECODE. This bytecode is then stored on the blockchain in the Ethereum network. Now keep in mind the blockchain is immutable, which means that anytime you would want to make a change to the contract, you will have to move that contract to a new address. You can't edit what's at the original address, because that is now in a block that's already been processed. 
+
+ 	One thing to remember also is because of this the code is actually stored live, which means you are exposing your actual code. Now, on one hand having that code available and sometimes people will upload not just the binary code, but they'll upload the original solidity code that they wrote the smart contract in for full transparency. This enables anyone who interacts with that contract to understand that it's not going to automatically take that ether and send it some mysterious Ethereum wallet. But because of this public availability of your code, it also means that you code must be written very well. It must be well-tested or savvy hackers can actually exploit the code. This happened in 2016 in what's now called the "FAMOUS DAO HACK". 
+ 		Fifty million dollars worth of ether was drained from a contract and this caused a lot of turmoil in the community, whether or not they should write code to fix that hack. The debate still continues today. The did actually write codes so anyone who's using ETH, E-T-H, is running on the code base that had a fix for the DAO. However, there were a number of resistors and they're the ones who created what's called Ethereum Classic or ETC. 
+
+ 	So the bottom line is Ethereum represents a turing complete smart contract processing environment. And they talk about this a lot, really all that means is it's a programming language where you can do the things you'd expect to in a modern programming language. Everything is available, decentralized on the blockchain. It's public and it's unchangeable. Because it's built into the blockchain, financial applications are extremely easy to write in integrating any type of financial processing comes quite naturally in the smart contract. 
+
+ 	And finally, keep in mind that you don't just have to store ether inside of a smart contract. You can store all kinds of data. In fact, any public variable that you create is going to be stored in the state of the Ethereum network and in the blockchain. 
+
+ 	Overall smart contracts are one of the key reasons that blockchain and distributed ledger technology is advancing beyond the use case of simply storing value or handling financial transactions. Being able to write code that resides in a blockchain allows for distributed functionality that be used to automate contract execution and provide back-end power to decentralize apps or DApps.
+
+
 -------------------------------------------------------------------
 THE CASE FOR DECENTRALIZED APPS OR DAPPS
+
+
+ Decentralized apps, or DApps, are applications that run on a blockchain. 
+ - The blockchain enables apps to run without having to have a central location like a web URL to go to. This opens up a whole new breed of applications. 
+
+ How DApps work
+ 	- The word DApps is simply short for decentralized apps. So let's take a step back and look at centralized applications and how they function. Whenever we go to a centralized app, we're either going to go through a mobile app or through a web URL. Whichever way we go through, it's going to interact with the same core functionality at a central point. All of the functionality will reside on a server, or servers, or virtual servers and all of the data will be stored within that environment. Some problems with this model, for starters, because it's a centralized location, it's vulnerable to a distributed denial of service attack, where the server can be taken down or it can effectively block other people from being able to access it. Every time you use a centralized application, you're surrendering your trust, you're paying fees, and you're giving up data to whomever is operating that central application. Anything that happens within that environment, any transactions, or any data that's created or given, is essentially hidden. We don't know what happens to it unless they care to show it to us or are required to show it to us by law. Some examples of these types of applications are ride-sharing apps like Uber and Lyft, Airbnb or other applications that allow us to rent our homes out or rent a home somewhere else, and most recently in the news as of the recording of this course, has been Facebook who's come under a lot of fire because of all this data that they're holding, and they're providing to their customers whether we like it or not. 
+ 	- When you look at a DApp, everything is essentially hosted through the Ethereum network. Because of that, you can access that DApp from any node that can access the blockchain. This opens up a huge global network of the Ethereum network. The advantages of running things in a DApp are for starters it reduces fees. Because there is no centralized authority, there doesn't need to be a big charge for the management of that application. 
+ 		1. It reduces fees
+ 		2. DApps reduce the reliance on a central resource. 
+ 		3. Because it's running on the Ethereum network, it's essentially invulnerable to a DDoS attack. 
+ 		4. And lastly, we can remove personal trust from the transaction. 
+
+ 	- By using smart contracts, we can ensure that "FUNDS ARE MOVED AROUND ONLY WHEN CERTAIN CONDITIONS ARE MET AND WE DON'T HAVE TO RELY ON A MIDDLEMAN TO HANDLE THE TRANSACTIONS FOR US". 
+ 	- Let's look at an example of a ride-sharing DApp. If we were to use a decentralized application for ride-sharing, it would look and behave much like any current ride-sharing application. We would put a request in, that request would go out, the difference is that request would go out on a block chain. The request would then go out to anyone who's listening, any driver. Now certainly we would want the ability to possibly select a driver, look at the ratings of a driver, cancel a driver, things like that to provide our own security, but that's mostly irrelevant. That stuff could all be built no matter what type of application you're using. Once the ride arrives, the funds wouldn't be released until we reach our destination and our device alerts the blockchain that we've arrived at our destination and then the funds are released. In this way, there's no organization that had to be in between us and getting that ride, so you can see it eliminates a lot of overhead. 
+
+ 	- The way that DApps work from a more practical and technical standpoint, is that 
+ 		1. our files are going to be hosted in Ethereum through an app called Swarm that exists on many of the Ethereum nodes.
+ 		2. Any interactions that happen with an application, will happen via a smart contract. So this contract will handle any kind of financial transactions as well as any general processing and data storage. 
+ 		3. And all of that data will be stored, anything that's persistent will be stored in the blockchain. 
+
+ 		Now keep in mind that Swarm can host any types of files, so this would enable us to deliver any kind of file that you would want to. Typically, and especially in the case of this course, we're going to host it with HTML, JavaScript, and Cascading Style Sheets. 
+
+ 	One of the most powerful use cases for Ethereum is the ability to create these decentralized applications, or DApps. DApps utilize the power of the blockchain to cut out the middleman, or to do things like track items through a supply chain. The possibilities are virtually endless, and we can see some of these DApps starting to make it in the world today.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -------------------------------------------------------------------
 SOME SAMPLE DAPPS
 -------------------------------------------------------------------
