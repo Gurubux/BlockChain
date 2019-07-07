@@ -191,46 +191,123 @@ THE CASE FOR DECENTRALIZED APPS OR DAPPS
  	One of the most powerful use cases for Ethereum is the ability to create these decentralized applications, or DApps. DApps utilize the power of the blockchain to cut out the middleman, or to do things like track items through a supply chain. The possibilities are virtually endless, and we can see some of these DApps starting to make it in the world today.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -------------------------------------------------------------------
 SOME SAMPLE DAPPS
+Let's have a look at some of the types of DApps that can be built. The Ethereum White Paper highlights three main categories of DApps. 
+1. The first is tokenization. 
+	And certainly tokenization can encompass creating different kinds of tokens that can be used to exchange financially and for barter, and things like that. But there are a lot of ways that you can use tokenization beyond that. You can do things like storing physical assets as cryptoassets. So this will essentially allow you to catalog and tokenize anything that you own. I've seen other ideas where you can use tokens as essentially, power to vote. So the more people buy into a system, the more voting power that they have in that system. And then of course, there's the traditional mileage or reward point model which allows you to get tokens when you purchase something or use tokens for discounts or to purchase other things within an environment. 
+2. Transaction and Financial
+	Ethereum is well-evolved for handling transactions in any types of money-related applications. This can include simple payment processing that's intelligent using smart contracts. But it could also include things like auctions, or specialized commerce applications. It could include ideas like receiving payment for utilizing your devices for storage or hosting. And in this, I would also include distributed versions of things like ridesharing apps. 
+
+3. Other 
+	And it's surprising how many different ideas there are out there. Some examples might be voting, or supply chain management apps. 
+
+
+There is one place you can go to see applications that are built in the Ethereum network and this is called S"tate of the DApps". You can see there's lots of games. A lot of people have used this crypto platform to develop different kinds of games. There are a lot of other things as well. I definitely recommend poking around in here. There are things for travel, there are different applications for collectibles, of course. And I would put that somewhere in the tokenization-type of apps. It's really fun to see what they build, not to mention inspiring. If you wanna see the many different tokens that are utilizing Ethereum, you can do this. 
+
+Etherscan is a way of viewing things that exist in the Ethereum network. ERC20 is a standard that you can use to create tokens using Ethereum. And these are all tokens that utilize the ERC20 standard to create their own tokens. 
+
+All-in-all, the possibilities are virtually endless, and it's inspirational to see how many different types of applications are coming out today that are going to change the way we interact with each other and the way we interact with a blockchain in the future.
+
+
+
 -------------------------------------------------------------------
 HOW ETHEREUM WORKS
+Ethereum is a blockchain that is in many ways like Bitcoin meaning anyone can download it and run the blockchain processing software and even download a full node which contains all the the blocks of the blockchain. 
+
+EVM - 
+	But what really sets Ethereum apart is the inclusion of the ETHEREUM VIRTUAL MACHINE to process smart contracts. The heart of Ethereum's power is this EVM. 
+	The EVM is co-located with the full Ethereum blockchain so anyone who downloads and runs a node will also by default be running the EVM
+	One way to think of the EVM is that it's like having a full LAMP or MEAN Stack at your disposal. 
+
+	The difference is the Ethereum blockchain is what's going to store the data instead of the database, whereas the EVM is the app server that's going to handle processing smart contracts and the programming functionality. 
+
+Swarm -  for hosting files and 
+Whisper -  for messaging and DApps. 
+
+Consensus - Every Ethereum node runs the EVM. This then syncs data to maintain consensus of the blockchain. That's how it maintains security and maintains the blockchain. Because of this, there is high fault tolerance. 
+
+Zero downtime - There is zero downtime because those are so many nodes online at any given moment all over the place. This ensures immutability and will block censorship.
+
+One thing to remember is that EVM is the runtime engine that processes smart contracts. There is no inherent network access, file system access, or other processes like you might have in other application environments. You have really only limited access to other contracts such as sending money to them. 
+
+Bytecode - The contracts in EVM are stored in bytecode so they have been compiled prior to deployment on the blockchain so the EVM doesn't compile them. 
+
+Solidity - In most instances, these contracts are written in Solidity, but there are other options available such as Lisk, Bamboo and Viper
+
+One thing to remember is that EVM does have some non-persistent memory so you can run variables and you can have variables that are used during the execution of a function; however, when that function is completed executing they will no longer exist in memory. However, if you do want to maintain data you can create variables which will store that data in key value pairs onto the blockchain. 
+
+EVMs : https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-(EVM)-Awesome-List
+	Geth   :
+		We have go-ethereum, is by far the most popular usually referred to as Geth. 
+	Parity : 
+		Was written by the former CTO of Ethereum and uses a programming language called Rust. 
+
+	Pyethereum : 
+		There are other clients as well that run on C++ , Pyethereum, if you've ever heard of that before, and 
+	Py-EVM	:  
+		which are different versions of Python, 
+	Ethereum J 
+
+The key is when you choose your EVM, CHOOSE ONE THAT COMES FROM AN ACTIVE COMMUNITY. 
+
+Remember that you don't necessarily need to know the language that the server itself is written on, you only need to know if you want to contribute to features that are available within that EVM. 
+
+
+For the purpose of this course, we are going to be using Truffle. You can optionally use Ganache if you'd like to. It provides a little more of a visual interface so you can see in real time how the wallets are changing and where the ether is flowing. 
+We are going to use Geth to run EVM and you can use that to run on a Testnet or the Mainnet.
+
+
+https://github.com/llSourcell/Web3.0_Explained/blob/master/Web%203.0%20.ipynb
+
+
+
+
 -------------------------------------------------------------------
 INTERACTING WITH THE ETHEREUM NETWORK
--------------------------------------------------------------------
+- Etherscan. - ERC-20
+	One of the most powerful and interesting elements of the BlockChain is that we can see publicly whatever has happened on the BlockChain. It's really cool. And I think for me, seeing this on the website is a great way to get an understanding mentally of what the BlockChain is because when you can see it, for some reason, it seems to make it more real and more understandable. So this website is called Etherscan. This is my favorite Block Explorer of Ethereum. It basically allows you to see anything that's happened. 
+	I can see Blocks, whose mined them, how many transactions are in them, what the Block reward was. So, that's interesting and one side of the spectrum from sort a mining back-end perspective, there's transactions so any transaction you can drill into these you can link and I can see every transaction. So, we can see something happened here, this didn't work, an error happened when the contract was trying to execute it so, there's a warning here. But I can see that it tried to send it from this address to this address which is a contract, a smart contract. You can actually go in and see an address, for example, like this one and here's the warning transaction. It'll tell me what the current balance is and then these are all the transfers that have come to and from that address. 
+	Now, conversely I can go into the contract as well. Now, here's what's cool about the contract. So this particular contract, you can see down here says it's a token contract so it's ERC-20 compliant. So the contract itself has an address just like anything else does in the BlockChain and I can see all the transactions now one of the interesting things about ERC-20 Token Contracts is that when you transfer tokens it actually sends it to the contract and the contract is the mediator for sending whatever that token is back and forth. But here's something interesting to take a look at in terms of having a smart contract, now whether it's a token contract or any contract, notice that we actually have this read contract. So this is sort of a visual way of seeing the contract and information about the contract and then here we have the code. Most of them will have code, you can see this has a little check which means it's verified. Which means somebody has uploaded and linked the actual source code which is considered a best practice because you can see then, what's happening inside of the contract so when you send money to it you know that there's not a back door that the owner can go in and just pull out all the Ether that's sent to it. But you can see here all the functions. This is the actual solidity code that was written to create this contract and if you go down further you can see here's the actual Byte Code that's being processed by the BlockChain and if you remember it's the Byte Code that's there that the EVM doesn't actually process the compilation, it's just stored in Byte Code and then there's an Opcodes view you can actually write these thing in Opcodes if you want. 
+	It's a little beyond my understanding but it's pretty cool what you can do in the ABI. In another movie we're gonna talk about interacting with smart contracts and Java Script and what exactly that means and we'll talk about the ABI then. But overall it's really cool to see. There's some other stuff you can see here. Here are all the verified contracts there are a number of internal transactions that have happened. I can go and I can browse through all the tokens. So these are all tokens that use the Ethereum in order to exist essentially. Mostly they implement sort of open standards like ERC-20, in fact, these are all ERC-20 it looks like. Notice that EOS is probably the most popular one at least based on volume. They are currently, they are a separate platform actually. They'll be creating their own token but until they do they've put everything in an ERC-20 token. So, that's interesting. There are a bunch of charts about the BlockChain and then you can also refer to this miscellaneous which would give you information, for example, if you were to mine Ethereum, how much could you make if you threw a certain amount of processing power at it? It's really cool, it's really interesting. And I think looking at the BlockChain in this way, helps you, it helps me at least to get a better understanding of what exactly it is.
+
+
+QUIZ
+What is the key difference between the Bitcoin and Ethereum blockchains?
+	Ethereum tracks state in an easily accessible manner.
+Write operations in smart contracts cost gas but read operations are free.
+The Ethereum Virtual Machine (EVM) does the following:
+	processes bytecode
+Any transaction, smart contract, or address on the ethereum network can be viewed publicly.
+
 
 **********************************************************************************************************************
 3. WRITING A SMART CONTRACT
 **********************************************************************************************************************
 INTRO TO SOLIDITY
+- Based on ECMAScript - Thus similar to Javascript
+- Parsed Language 
+*NOTE*
+	- Ethereum Smart Contract is Compiled into Bytecode,
+	- this bytecode will be stored in the ethereum network(blockchain thus then becomes unchangable immutable) 
+	- and then  is processed by EVM 
+- Statically typed
+- Supports inheritance
+- Blockchain Native
+- Write costs Gas(Ether)
+
 -------------------------------------------------------------------
 WHAT DOES SOLIDITY LOOK LIKE?
+Remix - Ethereum IDE
+
+
+
 -------------------------------------------------------------------
 CREATING A SIMPLE SMART CONTRACT
+
 -------------------------------------------------------------------
 COMPILING AND MIGRATING SMART CONTRACTS
+truffle compile
 -------------------------------------------------------------------
 TESTING WITH TRUFFLE
 
